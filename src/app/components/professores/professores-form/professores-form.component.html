@@ -1,0 +1,35 @@
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body centralizar">
+                    <h2>{{ professor.id ? 'Editar Professor' : 'Novo Professor' }}</h2>
+
+                    <form #formulario="ngForm">
+                        Nome:<br>
+                        <input required [(ngModel)]="professor.nome" type="text" class="form-control" name="nome">
+                        <br>
+
+                        Especialidade:<br>
+                        <input required [(ngModel)]="professor.especialidade" type="text" class="form-control"
+                            name="especialidade">
+                        <br>
+
+                        Idade:<br>
+                        <input required [(ngModel)]="professor.idade" type="number" class="form-control" name="idade">
+                        <br>
+
+                        <button (click)="save()" [disabled]="!formulario.valid" class="btn btn-success">
+                            {{ professor.id ? 'Atualizar' : 'Salvar' }}
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4"></div>
+    </div>
+</div>

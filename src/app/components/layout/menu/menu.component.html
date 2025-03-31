@@ -1,0 +1,56 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+
+        <!-- Navbar brand -->
+        <a class="navbar-brand" [routerLink]="['/']">Sistema Escolar</a>
+
+        <!-- Toggle button (Mobile) -->
+        <button class="navbar-toggler" type="button" (click)="basicNavbar.toggle()" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" mdbCollapse #basicNavbar="mdbCollapse">
+            <!-- Left links -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <!-- Alunos -->
+                <li class="nav-item">
+                    <!-- Use routerLink para navegar sem recarregar -->
+                    <a class="nav-link" [routerLink]="['/admin/alunos']">Alunos</a>
+                </li>
+
+                <!-- Professores -->
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/admin/professores']">Professores</a>
+                </li>
+
+                <!-- Turmas -->
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/admin/turmas']">Turmas</a>
+                </li>
+
+                <!-- Cursos -->
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/admin/cursos']">Cursos</a>
+                </li>
+
+            </ul>
+            <!-- Left links -->
+
+            <!-- Exemplo de campo de busca (opcional) -->
+            <form class="d-flex input-group w-auto">
+                <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search" />
+                <button class="btn btn-outline-primary" type="button">
+                    Buscar
+                </button>
+            </form>
+        </div>
+        <!-- Collapsible wrapper -->
+    </div>
+    <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->

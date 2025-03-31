@@ -1,0 +1,40 @@
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Lista de Professores</h2>
+                    <a href="/admin/professores/new" class="btn btn-success mb-3">Novo Professor</a>
+
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Especialidade</th>
+                                <th scope="col">Idade</th>
+                                <th scope="col">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (professor of lista; track $index) {
+                            <tr>
+                                <td>{{ professor.id }}</td>
+                                <td>{{ professor.nome }}</td>
+                                <td>{{ professor.especialidade }}</td>
+                                <td>{{ professor.idade }}</td>
+                                <td>
+                                    <a href="/admin/professores/edit/{{professor.id}}"
+                                        class="btn btn-primary">Editar</a>
+                                    <button (click)="delete(professor)" class="btn btn-danger">Excluir</button>
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

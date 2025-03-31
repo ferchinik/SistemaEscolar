@@ -1,0 +1,39 @@
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Lista de Turmas</h2>
+                    <a href="/admin/turmas/new" class="btn btn-success mb-3">Nova Turma</a>
+
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nome</th>
+                                <th>Capacidade</th>
+                                <th>Período</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (turma of lista; track $index) {
+                            <tr>
+                                <td>{{ turma.id }}</td>
+                                <td>{{ turma.nome }}</td>
+                                <td>{{ turma.capacidade }}</td>
+                                <td>{{ turma.periodo }}</td>
+                                <td>
+                                    <a href="/admin/turmas/edit/{{turma.id}}" class="btn btn-primary">Editar</a>
+                                    <button (click)="delete(turma)" class="btn btn-danger">Excluir</button>
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

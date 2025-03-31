@@ -1,0 +1,41 @@
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body centralizar">
+                    <h2>{{ turma.id ? 'Editar Turma' : 'Nova Turma' }}</h2>
+
+                    <form #formulario="ngForm">
+                        Nome:<br>
+                        <input required [(ngModel)]="turma.nome" type="text" class="form-control" name="nome">
+                        <br>
+
+                        Capacidade:<br>
+                        <input required [(ngModel)]="turma.capacidade" type="number" class="form-control"
+                            name="capacidade">
+                        <br>
+
+                        Período:<br>
+                        <select required [(ngModel)]="turma.periodo" class="form-control" name="periodo">
+                            <option value="">Selecione um período</option>
+                            <option value="Matutino">Matutino</option>
+                            <option value="Vespertino">Vespertino</option>
+                            <option value="Noturno">Noturno</option>
+                            <option value="Integral">Integral</option>
+                        </select>
+                        <br>
+
+                        <button (click)="save()" [disabled]="!formulario.valid" class="btn btn-success">
+                            {{ turma.id ? 'Atualizar' : 'Salvar' }}
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4"></div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body centralizar">
+                    <h2>{{ curso.id ? 'Editar Curso' : 'Novo Curso' }}</h2>
+
+                    <form #formulario="ngForm">
+                        Nome do Curso:<br>
+                        <input required [(ngModel)]="curso.nome" type="text" class="form-control" name="nome">
+                        <br>
+
+                        Descrição:<br>
+                        <textarea [(ngModel)]="curso.descricao" class="form-control" name="descricao"
+                            rows="4"></textarea>
+                        <br>
+
+                        <button (click)="save()" [disabled]="!formulario.valid" class="btn btn-success">
+                            {{ curso.id ? 'Atualizar' : 'Salvar' }}
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4"></div>
+    </div>
+</div>

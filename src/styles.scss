@@ -1,0 +1,57 @@
+/* Importação do FontAwesome e MDB */
+@import '@fortawesome/fontawesome-free/css/all.css';// Ícones
+@import 'mdb-angular-ui-kit/assets/scss/mdb.scss';// MDB Styles
+
+/* Estilo Global */
+body {
+  background-color: #f8f9fa;  // Cor de fundo suave para o body
+  font-family: 'Roboto', sans-serif;  // Definindo a fonte Roboto
+  margin: 0;  // Remover margens padrões
+  padding: 0;  // Remover paddings padrões
+  height: 100vh;  // Garantir que o body ocupe toda a altura da tela
+  display: flex;
+  flex-direction: column;  // Organizando o layout verticalmente
+}
+
+/* Adicionando estilo para o Navbar para garantir que ele não sobreponha conteúdo */
+.navbar {
+  margin-bottom: 20px;  // Espaço inferior para a navbar
+}
+
+/* Customização dos Botões */
+.btn {
+  border-radius: 5px;  // Arredondamento nos botões
+  transition: background-color 0.3s ease;  // Suavizar a transição de cor ao passar o mouse
+  // espaço entre os botões
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+/* Efeito de hover nos botões */
+.btn:hover {
+  color: white;  // Garantir que o texto seja visível
+}
+
+/* Estilos para as Tabelas */
+.table {
+  border-radius: 5px;
+  border: 1px solid #ddd; // Borda suave para tabelas
+  width: 100%;  // Garantir que a tabela ocupe toda a largura disponível
+  margin-bottom: 20px;  // Espaço inferior para a tabela
+}
+
+.table th, .table td {
+  padding: 10px;  // Ajustando o padding nas células
+  text-align: center;  // Centralizando o texto nas células
+  font-size: 14px;  // Ajustando o tamanho da fonte
+}
+
+/* Estilo para quando a tabela está em modo de hover */
+.table-hover tbody tr:hover {
+  background-color: #f1f1f1;  // Cor de fundo levemente diferente ao passar o mouse
+}
+
+/* Ajuste de altura para o conteúdo */
+.main-content {
+  flex-grow: 1;  // Fazendo o conteúdo crescer e preencher o espaço disponível
+}

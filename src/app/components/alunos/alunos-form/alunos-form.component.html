@@ -1,0 +1,39 @@
+<div class="container"> <form (ngSubmit)="save()">
+
+  <div class="mb-3">
+    <label for="nomeAluno" class="form-label">Nome</label>
+    <input type="text" id="nomeAluno" name="nomeAluno" class="form-control"
+           [(ngModel)]="aluno.nome" required placeholder="Digite o nome">
+    </div>
+
+  <div class="mb-3">
+    <label for="cpfAluno" class="form-label">CPF</label>
+    <input type="text" id="cpfAluno" name="cpfAluno" class="form-control"
+           [(ngModel)]="aluno.cpf" required placeholder="999.999.999-99" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"> </div>
+
+  <div class="mb-3">
+     <label class="form-label">Turma</label>
+     <div>
+       @if(aluno.turma){
+         <span class="me-2 p-2 border rounded">{{ aluno.turma.nome }} ({{aluno.turma.ano}})</span>
+         <button type="button" class="btn btn-sm btn-outline-danger" (click)="limparTurma()">Remover</button>
+       } @else {
+         <button type="button" class="btn btn-sm btn-outline-primary" (click)="buscarTurma()">Selecionar Turma</button>
+       }
+     </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Salvar</button>
+  </form>
+
+<ng-template #modalTurmasList>
+  <div class="modal-header">
+     <h5 class="modal-title">Selecionar Turma</h5>
+     <button type="button" class="btn-close" aria-label="Close" (click)="modalRef.close()"></button>
+  </div>
+  <div class="modal-body">
+     <app-turmas-list [modoModal]="true" (retorno)="selecionarTurma($event)"></app-turmas-list>
+  </div>
+</ng-template>
+
+</div> ```
